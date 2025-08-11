@@ -8,7 +8,7 @@
  *
  * @description N/A
  *
- * @tech        HTML
+ * @tech        cpp
  *
  * @notes       N/A
  * ===============================================
@@ -189,69 +189,56 @@ public:
 };
 int main()
 {
-
     int choice;
-    int loop = 1;
     ll l1;
-    while (loop == 1)
+    while (true)
     {
         string sname;
-        cout << "===============WELCOME TO YOUR MUSIC PLAYER==================" << endl;
-        cout << "1: TO ADD THE SONG AT THE BEGINING" << endl
-             << "2:TO ADD THE SONG AT THE END" << endl
-             << "3:TO DISPLAY Playlist" << endl
-             << "4: To navigate to next song" << endl
-             << "5: To navigate to next song" << endl
-             << "6:EXIT" << endl;
-        cout << "==================================================================" << endl;
-
-        cout << endl
-             << endl;
+        cout << "\n=============== WELCOME TO YOUR MUSIC PLAYER ===============\n";
+        cout << "1: Add song at the beginning\n";
+        cout << "2: Add song at the end\n";
+        cout << "3: Display playlist\n";
+        cout << "4: Next song\n";
+        cout << "5: Previous song\n";
+        cout << "6: Delete song\n";
+        cout << "7: Exit\n";
+        cout << "============================================================\n";
+        cout << "Enter choice: ";
         cin >> choice;
+        cin.ignore();
+
         switch (choice)
         {
         case 1:
-            cout << "enter the song to add at the begining" << endl;
-            getchar();
+            cout << "Enter the song to add at the beginning: ";
             getline(cin, sname);
             l1.insert_song_beg(sname);
             break;
         case 2:
-            cout << "enter the song to add at the end " << endl;
-            getchar();
+            cout << "Enter the song to add at the end: ";
             getline(cin, sname);
             l1.insert_song_end(sname);
             break;
         case 3:
-            cout << "=============DISPLAYING THE LIST=============" << endl;
+            cout << "\n============= PLAYLIST =============\n";
             l1.display_songs();
-            cout << endl;
             break;
         case 4:
-            cout << "Nevigating to next song" << endl;
             l1.NextSong();
             break;
         case 5:
-            cout << "nevigating to previous song" << endl;
             l1.PreviousSong();
             break;
         case 6:
-            cout << "enter song name to delete" << endl;
-            string a;
-            getchar();
-            getline(cin, a);
-            deletesong(a);
+            cout << "Enter song name to delete: ";
+            getline(cin, sname);
+            l1.deletesong(sname);
             break;
-
         case 7:
-            loop--;
-            break;
-
+            cout << "Exiting playlist. Goodbye!\n";
+            return 0;
         default:
-            cout << "enter a valid input!!" << endl;
-            break;
+            cout << "Invalid choice! Try again.\n";
         }
     }
-
-    return 0;
 }
