@@ -6,7 +6,7 @@
  * @created     2025-08-11
  * @updated     2025-08-11
  *
- * @description  N/A
+ * @description N/A
  *
  * @tech        cpp
  *
@@ -14,60 +14,68 @@
  * ===============================================
  */
 
-// You work for an online retail company that manages thousands of product
-// listings every day. The system needs to display product prices in ascending
-// order quickly when customers filter by price, to help them find affordable
-// options easily. Write a program for above scenario.
+// 2 Quick sort A warehouse management system wants to sort inventory items by
+// stock quantity to prioritize restocking.Write a program for above
+// scenario.
+// Hint:
+// Given an unsorted list of inventory quantities, implement Quick Sort
+// to sort items by stock quantity in ascending order. Discuss how the
+// presence of many duplicate quantities affects Quick Sort’s efficiency.
 
 #include <bits/stdc++.h>
 using namespace std;
 
-int partition(vector<double> &prices, int low, int high)
+// partition and sort
+int partition(vector<int> &arr, int low, int high)
 {
-    double pivot = prices[high];
+    int pivot = arr[high];
     int i = low - 1;
 
     for (int j = low; j < high; j++)
     {
-        if (prices[j] <= pivot)
+        if (arr[j] <= pivot)
         {
             i++;
-            swap(prices[i], prices[j]);
+            swap(arr[i], arr[j]);
         }
     }
-    swap(prices[i + 1], prices[high]);
+    swap(arr[i + 1], arr[high]);
     return i + 1;
 }
 
-void quickSort(vector<double> &prices, int low, int high)
+// quick sort
+void quickSort(vector<int> &arr, int low, int high)
 {
     if (low < high)
     {
-        int pIndex = partition(prices, low, high);
-        quickSort(prices, low, pIndex - 1);
-        quickSort(prices, pIndex + 1, high);
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
     }
 }
 
 int main()
 {
+    vector<int> quantities;
     int n;
-    cout << "Enter number of products: ";
+
+    cout << "Enter number of inventory items: ";
     cin >> n;
 
-    vector<double> prices(n);
-    cout << "Enter product prices:\n";
+    cout << "Enter stock quantities:\n";
     for (int i = 0; i < n; i++)
     {
-        cin >> prices[i];
+        int temp;
+        cin >> temp;
+        quantities.push_back(temp);
     }
 
-    quickSort(prices, 0, n - 1);
+    quickSort(quantities, 0, n - 1);
 
-    cout << "\nPrices in ascending order:\n";
-    for (double price : prices)
+    cout << "\nSorted stock quantities (Ascending):\n";
+    for (int i = 0; i < quantities.size(); i++)
     {
-        cout << fixed << setprecision(2) << price << " ";
+        cout << quantities[i] << " ";
     }
     cout << endl;
 
