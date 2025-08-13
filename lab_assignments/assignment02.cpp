@@ -1,19 +1,3 @@
-/**
- * ===============================================
- * @file        assignment02.cpp
- * @path        /code/DSA/problems/lab_assignments
- * @author      Om Khalane
- * @created     2025-08-11
- * @updated     2025-08-11
- *
- * @description N/A
- *
- * @tech        cpp
- *
- * @notes       N/A
- * ===============================================
- */
-
 // 2 Quick sort A warehouse management system wants to sort inventory items by
 // stock quantity to prioritize restocking.Write a program for above
 // scenario.

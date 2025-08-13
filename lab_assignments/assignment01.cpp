@@ -1,19 +1,3 @@
-/**
- * ===============================================
- * @file        assingment01.cpp
- * @path        /code/DSA/problems/lab_assignments
- * @author      Om Khalane
- * @created     2025-07-23
- * @updated     2025-08-10
- *
- * @description Brief description of this file
- *
- * @tech        cpp
- *
- * @notes       N/A
- * ===============================================
- */
-
 // An education platform needs to rank students based on their exam scores to publish results and generate merit lists. Write a program for above scenario.
 // Hint:
 // Given a list of student scores, use Quick Sort to sort them in descending order. Handle cases where many students have the same score and analyze how this affects the performance of Quick Sort.

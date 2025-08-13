@@ -1,19 +1,3 @@
-/**
- * ===============================================
- * @file        assignment04.cpp
- * @path        /code/DSA/problems/lab_assignments
- * @author      Om Khalane
- * @created     2025-08-11
- * @updated     2025-08-11
- *
- * @description N/A
- *
- * @tech        cpp
- *
- * @notes       N/A
- * ===============================================
- */
-
 // 4 Linked List Design a music playlist system using a linked list where:
 // ● Songs can be added to the beginning/end
 // ● Songs can be deleted

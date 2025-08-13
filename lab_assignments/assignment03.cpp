@@ -1,19 +1,3 @@
-/**
- * ===============================================
- * @file        assignment03.cpp
- * @path        /code/DSA/problems/lab_assignments
- * @author      Om Khalane
- * @created     2025-08-11
- * @updated     2025-08-11
- *
- * @description N/A
- *
- * @tech        cpp
- *
- * @notes       N/A
- * ===============================================
- */
-
 // 3 Merge sort A banking app needs to display a user’s transaction history sorted by
 // transaction amount to quickly identify large deposits or withdrawals.
 // Write a program for above scenario.
